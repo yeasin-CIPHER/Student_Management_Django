@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Even Numbers{% endblock %}
+
+{% block content %}
+<h3 class="mb-3">Even Number Generator</h3>
+
+<form method="post" class="mb-3">
+    {% csrf_token %}
+
+    <label class="form-label">Maximum Number:</label>
+    <input type="number" name="maximum" class="form-control" required
+           value="{% if maximum %}{{ maximum }}{% endif %}">
+
+    <button class="btn btn-primary w-100 mt-3">Show Even Numbers</button>
+</form>
+
+{% if maximum %}
+<div class="alert alert-success">
+    <h5 class="alert-heading">Even Numbers (0 to {{ maximum }})</h5>
+    <hr>
+    <ul class="list-group">
+        {% for x in ""|center:maximum %}
+            {% if forloop.counter0|divisibleby:2 %}
+                <li class="list-group-item">{{ forloop.counter0 }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% endblock %}

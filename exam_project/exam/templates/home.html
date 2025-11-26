@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="py-5 text-center text-light" style="background: linear-gradient(135deg, #0d6efd, #6610f2);">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to Student Management System</h1>
+        <p class="lead mt-3">
+            A simple and elegant Django project using Bootstrap 5.
+        </p>
+        <a href="/students/" class="btn btn-light btn-lg mt-3">
+            View Students
+        </a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Features</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">➕ Add Students</h5>
+                        <p class="card-text">Easily add new student details using a clean and simple form.</p>
+                        <a href="/students/add/" class="btn btn-primary">Add Student</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">📋 Student List</h5>
+                        <p class="card-text">View all students in a beautiful responsive table.</p>
+                        <a href="/students/" class="btn btn-primary">View List</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">✏️ Update & Delete</h5>
+                        <p class="card-text">Modify or delete any student records in one click.</p>
+                        <a href="/students/" class="btn btn-primary">Manage</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-3 bg-dark text-light text-center">
+    <p class="mb-0">© {{ year }} Student Management System • Author Yeasin Arafat</p>
+</footer>
+
+{% endblock %}

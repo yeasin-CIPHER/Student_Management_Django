@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
+
+{% block content %}
+<h3 class="mb-3">Edit Student</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="btn btn-success w-100 mt-2">Update</button>
+</form>
+
+<a href="/students/" class="btn btn-outline-secondary w-100 mt-2">Back to List</a>
+{% endblock %}
